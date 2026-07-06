@@ -513,7 +513,7 @@ footer p {
 @media (max-width: 420px) {
     #app {
         width: 100%;
-        min-height: 100vh;
+        min-height: 90vh;
         border-radius: 0;
         padding: 18px 16px 14px;
         box-shadow: none;
