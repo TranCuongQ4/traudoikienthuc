@@ -22,7 +22,7 @@ body {
 
 #app {
     width: 400px;
-    min-height: 700px;
+    min-height: 667px;
     max-width: 100%;
     background: linear-gradient(165deg, #0f1f0f 0%, #1a3a1a 100%);
     border-radius: 32px;
