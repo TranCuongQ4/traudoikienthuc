@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Trau Dồi Kiến Thức</title>
+	<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔆</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" oncontextmenu="return false">
+        <!-- Header -->
+        <header>
+            <div class="header-decoration"></div>
+            <h1 id="title">Trau Dồi Kiến Thức</h1>
+            <div class="header-decoration"></div>
+        </header>
+
+        <!-- Khu vực câu hỏi -->
+        <div id="questionArea">
+            <div id="questionBox">
+                <p id="questionText">Mời Nhấn Vào "Bắt Đầu Câu Hỏi"</p>
+            </div>
+
+            <div id="options" style="display: none;">
+                <button class="option-btn" data-letter="A" onclick="showConfirmModal('A')">
+                    <span class="letter">A</span>
+                    <span class="text"></span>
+                </button>
+                <button class="option-btn" data-letter="B" onclick="showConfirmModal('B')">
+                    <span class="letter">B</span>
+                    <span class="text"></span>
+                </button>
+                <button class="option-btn" data-letter="C" onclick="showConfirmModal('C')">
+                    <span class="letter">C</span>
+                    <span class="text"></span>
+                </button>
+                <button class="option-btn" data-letter="D" onclick="showConfirmModal('D')">
+                    <span class="letter">D</span>
+                    <span class="text"></span>
+                </button>
+            </div>
+        </div>
+
+        <button id="startBtn" onclick="startNewQuestion()">🔆 Bắt Đầu Câu Hỏi 🔆</button>
+
+        <!-- Nút điều khiển nhạc -->
+        <div id="musicControl">
+            <button id="musicBtn" onclick="toggleMusic()">
+                <span id="musicIcon">🔊</span>
+            </button>
+        </div>
+
+        <!-- Modal Xác Nhận -->
+        <div id="confirmModal" style="display: none;">
+            <div id="confirmContent">
+                <div class="modal-icon">🤔</div>
+                <p id="confirmText">Bạn Chọn Câu <span id="selectedLetter"></span> Là Câu Trả Lời Chính Xác Chứ?</p>
+                <div id="confirmButtons">
+                    <button id="confirmNo" onclick="closeConfirmModal()">Không</button>
+                    <button id="confirmYes" onclick="checkAnswer()">Vâng</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Kết Quả -->
+        <div id="resultModal" style="display: none;">
+            <div id="resultContent">
+                <div class="modal-icon" id="resultIcon">🎉</div>
+                <p id="resultText"></p>
+                <p id="resultDetail"></p>
+                <div id="resultCorrectAnswer"></div>
+                <button id="continueBtn" onclick="continueGame()">Tiếp Tục</button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>Thiết Kế Trần Cường - Zalo 0907860662</p>
+        </footer>
+    </div>
+
+    <!-- Audio ẩn để phát nhạc nền -->
+    <audio id="bgMusic" loop autoplay>
+        <source src="kienthuc.mp3" type="audio/mpeg">
+        Trình duyệt của bạn không hỗ trợ audio.
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
